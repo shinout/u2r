@@ -1,8 +1,7 @@
-module.exports = function(url) {
+module.exports = function(url, ret) {
   if (typeof url != "string") {
     throw new Error("type of url must be string");
   }
-
   var op = require('url').parse(url);
   if (!op.hostname) {
     if (op.pathname.charAt(0) != '/') {
@@ -11,13 +10,12 @@ module.exports = function(url) {
       op.pathname =splits.join();
     }
   }
-  return ({
-    host: op.hostname,
-    port: op.port || (op.protocol == 'https:') ? 443 : 80,
-    path: ( op.pathname 
-            ?  ((op.pathname.slice(0,1) == "/") ? "" : "/") + op.pathname + (op.search || "") 
-            : "/"),
-    protocol: op.protocol ? op.protocol.slice(0, -1) : 'http'
-  });
+  ret = ret || {};
+  ret.host = op.hostname;
+  ret.port = op.port || (op.protocol == 'https:') ? 443 : 80;
+  ret.path = ( op.pathname 
+              ?  ((op.pathname.slice(0,1) == "/") ? "" : "/") + op.pathname + (op.search || "") 
+              : "/");
+  ret.protocol = op.protocol ? op.protocol.slice(0, -1) : 'http';
+  return ret;
 }
-
