@@ -7,7 +7,7 @@ module.exports = function(url, ret) {
     if (op.pathname.charAt(0) != '/') {
       var splits = op.pathname.split("/");
       op.hostname =splits.shift();
-      op.pathname =splits.join();
+      op.pathname =splits.join("/");
     }
   }
   ret = ret || {};
