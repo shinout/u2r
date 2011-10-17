@@ -1,4 +1,4 @@
-var u2r = require("../url2request");
+var u2r = require("../u2r");
 var test = require("./shinout.test");
 
 
