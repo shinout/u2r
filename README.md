@@ -4,6 +4,13 @@
 > OK, node-request is really easy to use, but I wanted only the simplest function to get
 options object to pass to http(s)Client from url.
 
+### installation ###
+    git clone git://github.com/shinout/u2r.git
+
+    OR
+
+    npm install u2r
+
 ### usage ###
 
     var u2r = require('u2r');
