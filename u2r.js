@@ -18,4 +18,4 @@ module.exports = function(url, ret) {
               : "/");
   ret.protocol = op.protocol ? op.protocol.slice(0, -1) : 'http';
   return ret;
-}
+};
