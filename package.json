@@ -1,6 +1,6 @@
 {
   "name": "u2r"
-, "version": "0.1.1"
+, "version": "0.1.3"
 , "description": "url to request info"
 , "tags": ["request", "http", "client", "url"]
 , "author": "SHIN Suzuki <shinout310@gmail.com>"
